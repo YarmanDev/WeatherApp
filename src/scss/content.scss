@@ -93,8 +93,8 @@
     justify-content: center;
   }
   &-image {
-    width: 65px;
-    height: 65px;
+    width: 85px;
+    height: 85px;
   }
 }
 
@@ -144,4 +144,27 @@
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.auto {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 4px;
+  div {
+    font-size: 22px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.4;
+    &:hover {
+      background-color: rgba(35, 54, 107, 0.219);
+    }
+  }
 }

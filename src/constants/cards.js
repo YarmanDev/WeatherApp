@@ -1,0 +1,2 @@
+export const UPDATE_MAIN_CARD = "UPDATE_MAIN_CARD";
+export const UPDATE_SUB_CARDS = "UPDATE_SUB_CARDS";
