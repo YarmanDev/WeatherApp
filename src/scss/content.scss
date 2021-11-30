@@ -1,0 +1,147 @@
+.content {
+  width: 70%;
+  height: 85vh;
+  margin-top: 20px;
+}
+
+.input-wrapper {
+  width: 100%;
+  position: relative;
+
+  &__field {
+    width: 100%;
+    height: 33px;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 17px;
+  }
+
+  &__btn {
+    background-color: rgb(35, 54, 107);
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    &::after {
+      content: "";
+      background: url(../img/search.png) center/cover no-repeat;
+      position: absolute;
+      background-size: 30px;
+      top: -8px;
+      right: -9px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.cards {
+  width: 100%;
+  height: 90%;
+  margin-top: 20px;
+}
+
+.mainCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  color: #fff;
+  font-weight: 300;
+  width: 100%;
+  height: 60%;
+
+  > h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  > img {
+    margin-bottom: 20px;
+  }
+
+  .degrees {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-right: -12px;
+  }
+
+  .description {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .time {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+  .properties {
+    display: flex;
+    width: 270px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cardItem {
+    display: flex;
+    flex: 0 1 50%;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  &-image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.subCards {
+  margin-top: 18px;
+  width: 101.6%;
+  height: 37%;
+  display: flex;
+}
+
+.subCard {
+  width: 100%;
+  height: 100%;
+  margin-right: 15px;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+
+  .title {
+    font-size: 25px;
+    margin-bottom: 17px;
+  }
+
+  .degrees {
+    font-size: 27px;
+    margin-bottom: 13px;
+    margin-right: -10px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  &-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}
+
+.bothCard {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

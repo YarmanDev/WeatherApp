@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  &-title {
+    color: #dce0e0;
+    font-size: 22px;
+  }
+
+  &-icons {
+    display: flex;
+
+    & > svg {
+      margin-left: 10px;
+    }
+  }
+}
