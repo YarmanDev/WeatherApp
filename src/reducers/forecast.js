@@ -1,31 +1,13 @@
 import { UPDATE_SUB_CARDS } from "../constants/cards";
-const initialState = [
-  {
-    avgtemp_c: "3",
-    text: "Clear Sky",
-    date: "2021-11-30",
-    icon: "../../images/rain.svg",
-  },
-  {
-    avgtemp_c: "3",
-    text: "Clear Sky",
-    date: "2021-11-30",
-    icon: "../../images/rain.svg",
-  },
-  {
-    avgtemp_c: "3",
-    text: "Clear Sky",
-    date: "2021-11-30",
-    icon: "../../images/rain.svg",
-  },
-];
+import { initialStateForecast } from "./intialStates";
 
-export const forecastReducer = (state = initialState, action) => {
+export const forecastReducer = (state = initialStateForecast, action) => {
   switch (action.type) {
     case UPDATE_SUB_CARDS:
       return updateSubCards(state, action);
+    default:
+      return state;
   }
-  return state;
 };
 
 const updateSubCards = (state, { forecastday }) => {
@@ -44,11 +26,10 @@ const updateSubCards = (state, { forecastday }) => {
   secondDay = takeRightOptions(secondDay);
   thirdtDay = takeRightOptions(thirdtDay);
 
-  const [firstDayState, secondDayState, thirdtDayState] = state;
   const newState = [
-    { ...firstDayState, ...firstDay },
-    { ...secondDayState, ...secondDay },
-    { ...thirdtDayState, ...thirdtDay },
+    { ...state[0], ...firstDay },
+    { ...state[1], ...secondDay },
+    { ...state[2], ...thirdtDay },
   ];
   return newState;
 };

@@ -1,6 +1,8 @@
+$main-color: #fff;
+
 .content {
   width: 70%;
-  height: 85vh;
+  height: 88vh;
   margin-top: 20px;
 }
 
@@ -49,7 +51,7 @@
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  color: #fff;
+  color: $main-color;
   font-weight: 300;
   width: 100%;
   height: 60%;
@@ -93,8 +95,14 @@
     justify-content: center;
   }
   &-image {
-    width: 85px;
-    height: 85px;
+    width: 65px;
+    height: 50px;
+  }
+}
+@media (min-width: 1600px) {
+  .mainCard-image {
+    width: 120px;
+    height: 100px;
   }
 }
 
@@ -113,7 +121,7 @@
   padding: 20px;
   align-items: center;
   flex-direction: column;
-  color: #fff;
+  color: $main-color;
 
   .title {
     font-size: 25px;
@@ -131,9 +139,16 @@
   }
 
   &-image {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .subCard-image {
+    width: 100px;
+    height: 80px;
   }
 }
 
@@ -154,7 +169,7 @@
   flex-direction: column;
   z-index: 1;
   width: 100%;
-  background-color: #fff;
+  background-color: $main-color;
   border-radius: 10px;
   margin-top: 4px;
   div {

@@ -1,15 +1,21 @@
-import { React } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
 import App from "./App";
-import "./scss/null.scss";
-import { createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
+import "./index.scss";
+import "./scss/reset.scss";
+import { applyMiddleware, compose, createStore } from "redux";
 import { rootReducer } from "./reducers/rootReducer";
 import { Provider } from "react-redux";
 
+const middlewares = [thunkMiddleware];
+
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(...middlewares),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 ReactDOM.render(

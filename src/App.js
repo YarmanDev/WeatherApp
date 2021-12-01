@@ -1,5 +1,6 @@
-import Content from "./containers/Content";
-import Header from "./containers/Header";
+import React from "react";
+import { Content } from "./containers/Content";
+import { Header } from "./containers/Header";
 
 function App() {
   return (

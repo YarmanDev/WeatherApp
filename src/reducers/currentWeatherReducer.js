@@ -1,40 +1,16 @@
-import { UPDATE_MAIN_CARD } from "../constants/cards";
+import {
+  UPDATE_MAIN_CARD_PROPERTIES,
+  UPDATE_MAIN_CARD_WEATHER,
+} from "../constants/cards";
+import { intialStateCurrent } from "./intialStates";
 
-const intialState = {
-  country: "Ukraine",
-  name: "Lviv",
-  feelslike_c: 2,
-  text: "Snow",
-  icon: "../../images/rain.svg",
-  localtime: "Thursday 14.20",
-  wind_mph: "5.7",
-  pressure_mb: "1015",
-  humidity: "50%",
-  cloud: 0,
-};
-
-const updateMainCard = (
+const updateMainCardWeather = (
   state,
-  {
-    cloud,
-    humidity,
-    wind_mph,
-    feelslike_c,
-    pressure_mb,
-    text,
-    name,
-    country,
-    localtime,
-    icon,
-  }
+  { feelslike_c, text, name, country, localtime, icon }
 ) => {
   return {
     ...state,
-    cloud,
-    humidity,
-    wind_mph,
     feelslike_c,
-    pressure_mb,
     text,
     name,
     country,
@@ -42,11 +18,26 @@ const updateMainCard = (
     icon,
   };
 };
+const updateMainCardProperties = (
+  state,
+  { cloud, humidity, wind_mph, pressure_mb }
+) => {
+  return {
+    ...state,
+    cloud,
+    humidity,
+    wind_mph,
+    pressure_mb,
+  };
+};
 
-export const currentWeatherReducer = (state = intialState, action) => {
+export const currentWeatherReducer = (state = intialStateCurrent, action) => {
   switch (action.type) {
-    case UPDATE_MAIN_CARD:
-      return updateMainCard(state, action);
+    case UPDATE_MAIN_CARD_WEATHER:
+      return updateMainCardWeather(state, action);
+    case UPDATE_MAIN_CARD_PROPERTIES:
+      return updateMainCardProperties(state, action);
+    default:
+      return state;
   }
-  return state;
 };
